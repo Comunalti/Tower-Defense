@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Interactable
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: ModuleBase
+    uniqueID: 4164282681
+    locked: 0
+  - name: ModuleCore
+    uniqueID: 3391690827
+    locked: 0
+  - name: Generator
+    uniqueID: 286681205
+    locked: 0
+  - name: Battery
+    uniqueID: 2952570145
+    locked: 0
+  - name: Splitter
+    uniqueID: 2301839483
+    locked: 0
+  - name: Cable
+    uniqueID: 2319761441
+    locked: 0
