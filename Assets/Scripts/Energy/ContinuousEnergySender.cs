@@ -7,15 +7,22 @@ namespace Energy
     public class ContinuousEnergySender : MonoBehaviour
     {
         [SerializeField] private ConnectionHandler connectionHandler;
+        [SerializeField] private NodeConnector rootNodeConnector;
+
         [SerializeField] private EnergyStorage energyStorageFrom;
         [SerializeField] private EnergyStorage energyStorageTo;
         [SerializeField] [Tooltip("Per Sec")]private float quantity;
 
         private void Awake()
         {
+            
             if (energyStorageFrom is null)
             {
-                Debug.LogWarning("no energyStorage defined in prefab",gameObject);
+                energyStorageFrom = rootNodeConnector.ownerRoot.GetComponentInChildren<EnergyStorage>();
+                if (energyStorageFrom is null )
+                {
+                    Debug.LogError("no energyStorage in prefab");
+                }
             }
         }
 

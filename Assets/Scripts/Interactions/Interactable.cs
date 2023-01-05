@@ -18,8 +18,8 @@ namespace Interactions
         public bool areaHovered;
         public bool areaSelected;
         
-        public UnityEvent AreaHoveringChanged;
-        public UnityEvent AreaSelectingChanged;
+        public UnityEvent AreaHoveringChangedEvent;
+        public UnityEvent AreaSelectingChangedEvent;
 
 
         private void OnEnable()
@@ -46,11 +46,11 @@ namespace Interactions
             
             if (areaHoveredBefore != areaHovered)
             {
-                AreaHoveringChanged.Invoke();
+                AreaHoveringChangedEvent.Invoke();
             }
             if (areaSelectedBefore != areaSelected)
             {
-                AreaSelectingChanged.Invoke();
+                AreaSelectingChangedEvent.Invoke();
             }
         }
 
@@ -85,6 +85,11 @@ namespace Interactions
             {
                 InteractionManager.Instance.SetSelect(null);
             }
+        }
+
+        public void BreakSelection()
+        {
+            MouseUp();
         }
     }
 }

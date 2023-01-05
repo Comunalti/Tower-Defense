@@ -6,7 +6,8 @@ namespace Connections
     public class ConnectorJoint : MonoBehaviour
     {
         [SerializeField] private ConnectionHandler connectionHandler;
-        [SerializeField] private Transform connectedTransform;
+        [SerializeField] private int breakForce = 45000;
+
         private void OnEnable()
         {
             connectionHandler.ConnectionChangedEvent.AddListener(OnConnectionChanged);
@@ -21,11 +22,11 @@ namespace Connections
         {
             if (connectionHandler.ConnectedHandler != null)
             {
-                var distanceJoint2D = gameObject.AddComponent<DistanceJoint2D>();
-                distanceJoint2D.distance = 0;
-                distanceJoint2D.autoConfigureDistance = false;
-                distanceJoint2D.connectedBody = connectionHandler.ConnectedHandler.GetComponent<Rigidbody2D>();
-                distanceJoint2D.breakForce = 25000;
+                var joint = gameObject.AddComponent<DistanceJoint2D>();
+                joint.distance = 0;
+                joint.autoConfigureDistance = false;
+                joint.connectedBody = connectionHandler.GetOtherRigidbody();
+                joint.breakForce = breakForce;
             }
             else
             {

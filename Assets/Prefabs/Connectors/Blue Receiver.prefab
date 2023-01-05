@@ -136,4 +136,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectionHandler: {fileID: 5783099502673374786}
-  connectedTransform: {fileID: 0}
+  breakForce: 60000

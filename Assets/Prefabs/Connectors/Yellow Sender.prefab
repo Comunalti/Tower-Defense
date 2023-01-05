@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8644c1d7f941407897d33464afd86a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionHandler: {fileID: 0}
+  connectionHandler: {fileID: 9007431577053690488}
+  rootNodeConnector: {fileID: 4568970097526743871}
   energyStorageFrom: {fileID: 0}
   energyStorageTo: {fileID: 0}
   quantity: 0
@@ -130,6 +131,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2764415980275628810, guid: 75f7c0d29be80d146bfa26600ea0ce6e, type: 3}
   m_PrefabInstance: {fileID: 4068428636642094355}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4568970097526743871 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 512786189340806700, guid: 75f7c0d29be80d146bfa26600ea0ce6e, type: 3}
+  m_PrefabInstance: {fileID: 4068428636642094355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6396877594029534273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f53b7a40634d2caf811543d397d9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8117403408864661652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5247600862074273159, guid: 75f7c0d29be80d146bfa26600ea0ce6e, type: 3}
@@ -180,4 +192,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectionHandler: {fileID: 9007431577053690488}
-  connectedTransform: {fileID: 0}
+  breakForce: 60000

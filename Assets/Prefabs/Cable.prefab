@@ -92,7 +92,7 @@ MonoBehaviour:
   ropeSegmentPrefab: {fileID: 5285195207806740153, guid: 08a4701f7623fda4ba40b73e15df3e4d, type: 3}
   ropeStart: {fileID: 1033828752455213669}
   ropeEnd: {fileID: 5887923295315703064}
-  segmentCount: 5
+  segmentCount: 30
   segmentSize: {x: 0, y: 0}
   parent: {fileID: 6008816952985530365}
 --- !u!1001 &5791410954286301503
@@ -152,6 +152,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7073605533107765071, guid: 1f5717e890d1fd341a73f9bcdedf22bf, type: 3}
       propertyPath: root
+      value: 
+      objectReference: {fileID: 1048241659960242030}
+    - target: {fileID: 7369959103264668505, guid: 1f5717e890d1fd341a73f9bcdedf22bf, type: 3}
+      propertyPath: ownerRoot
       value: 
       objectReference: {fileID: 1048241659960242030}
     - target: {fileID: 8218410981339084359, guid: 1f5717e890d1fd341a73f9bcdedf22bf, type: 3}
@@ -255,6 +259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6008816952985530365}
     m_Modifications:
+    - target: {fileID: 59835737375419194, guid: 6a523052398aebb44ae9362cc32b5a74, type: 3}
+      propertyPath: ownerRoot
+      value: 
+      objectReference: {fileID: 1048241659960242030}
     - target: {fileID: 340497077412671276, guid: 6a523052398aebb44ae9362cc32b5a74, type: 3}
       propertyPath: root
       value: 
