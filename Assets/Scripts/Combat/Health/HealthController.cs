@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Combat.Enemies
+namespace Combat.Health
 {
     public class HealthController : MonoBehaviour
     {

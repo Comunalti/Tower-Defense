@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Combat.Enemies
+namespace Combat.Enemies.Spawn
 {
     public class EnemySpawner : MonoBehaviour
     {

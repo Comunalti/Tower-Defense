@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Weapons.Bullet.Trigger
+namespace Combat.Weapons.Bullet.Trigger
 {
     public class EnemyBulletTrigger : MonoBehaviour
     {

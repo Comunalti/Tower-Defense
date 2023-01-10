@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using Combat.Enemies.States;
 using UnityEngine;
 
-namespace Combat.Enemies
+namespace Combat.Enemies.Attack
 {
     public class EnemyAttackDelayController : MonoBehaviour
     {

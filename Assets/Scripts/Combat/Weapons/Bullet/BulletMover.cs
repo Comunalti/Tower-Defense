@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Weapons
+namespace Combat.Weapons.Bullet
 {
     public class BulletMover : MonoBehaviour
     {

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Combat.Enemies
+namespace Combat.Enemies.EnemyTargets
 {
     /// <summary>
     /// a class that Selects the closest EnemyTarget from the enemy that the pivot is in, this shall stay inside each enemy.

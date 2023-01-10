@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Combat.Health;
+using UnityEngine;
 
-namespace Combat.Enemies
+namespace Combat.Enemies.EnemyTargets
 {
     public class EnemyTarget : MonoBehaviour
     {

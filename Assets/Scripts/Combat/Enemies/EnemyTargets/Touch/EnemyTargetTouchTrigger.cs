@@ -1,4 +1,6 @@
-﻿namespace Combat.Enemies
+﻿using Core;
+
+namespace Combat.Enemies.EnemyTargets.Touch
 {
     public class EnemyTargetTouchTrigger : Trigger2DHandler<EnemyTarget>
     {

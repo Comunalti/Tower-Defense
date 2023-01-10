@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Combat.Enemies
+namespace Core
 {
     public abstract class Trigger2DHandler<T> : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Weapons.Bullet.Trigger
+namespace Combat.Weapons.Bullet.Trigger
 {
     public class BulletTriggerHandler : MonoBehaviour
     {

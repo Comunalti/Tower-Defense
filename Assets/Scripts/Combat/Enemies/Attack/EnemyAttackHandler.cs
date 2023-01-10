@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using Combat.Enemies.EnemyTargets;
+using Combat.Enemies.EnemyTargets.Touch;
+using UnityEngine;
 using UnityEngine.Events;
 
-namespace Combat.Enemies
+namespace Combat.Enemies.Attack
 {
     public class EnemyAttackHandler : MonoBehaviour
     {

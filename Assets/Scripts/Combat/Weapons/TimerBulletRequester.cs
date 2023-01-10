@@ -2,7 +2,7 @@
 using Energy;
 using UnityEngine;
 
-namespace Weapons
+namespace Combat.Weapons
 {
     public class TimerBulletRequester : MonoBehaviour
     {

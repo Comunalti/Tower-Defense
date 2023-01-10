@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Weapons
+namespace Miscellaneous
 {
     public class Timer : MonoBehaviour
     {

@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Weapons
+namespace Combat.Weapons
 {
     public class BulletSpawner : MonoBehaviour
     {

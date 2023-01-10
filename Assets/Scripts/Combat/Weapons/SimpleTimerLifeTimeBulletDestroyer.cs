@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
-namespace Weapons
+namespace Combat.Weapons
 {
     public class SimpleTimerLifeTimeBulletDestroyer : MonoBehaviour
     {
