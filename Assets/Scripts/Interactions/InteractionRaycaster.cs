@@ -68,18 +68,18 @@ namespace Interactions
         [SerializeField] private Interactable currentFrameInteractable;
         [SerializeField] private Interactable recordedInteractable;
 
-        private new Camera _camera;
+        private new Camera camera;
 
         private void Start()
         {
-            _camera = Camera.main;
+            camera = Camera.main;
         }
 
         void Update()
         {
             Vector3 mousePos = Input.mousePosition;
 
-            Vector2 mousePos3D = _camera.ScreenToWorldPoint(mousePos);
+            Vector2 mousePos3D = camera.ScreenToWorldPoint(mousePos);
             
             var hit = Physics2D.Raycast(mousePos3D, Vector2.zero, 0.0f, layerMask);
 

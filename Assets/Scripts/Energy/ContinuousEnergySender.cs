@@ -28,7 +28,7 @@ namespace Energy
 
         private void OnConnectionChanged()
         {
-            if (connectionHandler.ConnectedHandler is null)
+            if (connectionHandler.CurrentConnectedHandler is null)
             {
                 energyStorageTo = null;
                 return;

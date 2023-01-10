@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5177195436979081153}
   - component: {fileID: 7685659354753350754}
   - component: {fileID: 5004947250909009771}
-  - component: {fileID: 5175611082726309215}
+  - component: {fileID: 5280998452683423061}
   m_Layer: 7
   m_Name: Connector
   m_TagString: Untagged
@@ -153,12 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d870b413b4ba4c70bde6f67bdde0fef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedHandler: {fileID: 0}
+  connectionColor: 0
+  connectionType: 0
+  currentConnectedHandler: {fileID: 0}
   nodeConnector: {fileID: 512786189340806700}
   ConnectionChangedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!50 &5175611082726309215
+--- !u!50 &5280998452683423061
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -225,3 +227,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ownerRoot: {fileID: 0}
+  rootRigidBody: {fileID: 0}

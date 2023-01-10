@@ -1,0 +1,2 @@
+vou ter q mudar o connection node base root, pois o connector não pode ser filho do gameobject que ira se mover,
+ pois se não cria um delay na hora de mover pela fisica, temos q usar a fixed joint para resolver isso, e mudar em todos os prefabs

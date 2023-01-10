@@ -1,18 +1,18 @@
-﻿using UnityEngine;
+﻿using Core;
+using Interactions.Movers;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Interactions
 {
-    public class InteractionManager : MonoBehaviour
+    public class InteractionManager : Singleton<InteractionManager>
     {
         public enum InteractionManagerState{
             Free,
             Hovering,
             Selecting,
         }
-
-        public static InteractionManager Instance { get; private set; }
-
+        
         public InteractionManagerState interactionManagerState;
 
         [field: SerializeField] public Interactable Hovered { get; private set; }
@@ -21,16 +21,7 @@ namespace Interactions
         public UnityEvent HoveringChangedEvent;
         public UnityEvent SelectingChangedEvent;
 
-        private void Awake()
-        {
-            if (Instance != null)
-            {
-                Debug.LogWarning("Only one instance, ignoring this instance",gameObject);
-                return;
-            }
-            Instance = this;
-        }
-
+        
         void Refresh()
         {
             if (Selected != null)

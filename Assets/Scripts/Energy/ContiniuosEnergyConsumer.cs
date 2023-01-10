@@ -4,33 +4,36 @@ using UnityEngine.Events;
 
 namespace Energy
 {
-    public class ContinuousEnergyConsumer : MonoBehaviour
+    public abstract class EnergyConsumer : MonoBehaviour
     {
-        //todo: create discrete version and interface
+        public UnityEvent IsActiveStateChangedEvent;
+        [field: SerializeField] public bool IsActive { get; protected set; }
+    }
+    public class ContinuousEnergyConsumer : EnergyConsumer
+    {
+        //todo: create discrete version
         
         [SerializeField] private EnergyStorage energyStorage;
         [SerializeField] [Tooltip("Per Sec")] private float energyCost;
-        [SerializeField] private bool isActive;
 
-        public bool IsActive => isActive;
         public UnityEvent IsActiveStateChangedEvent;
         
         
         private void Update()
         {
-            var wasOnLastFrame = isActive;
+            var wasOnLastFrame = IsActive;
             
             if (energyStorage.CurrentEnergy >= energyCost)
             {
                 energyStorage.RemoveEnergy(energyCost);
-                isActive = true;
+                IsActive = true;
             }
             else
             {
-                isActive = false;
+                IsActive = false;
             }
             
-            if (isActive!=wasOnLastFrame)
+            if (IsActive!=wasOnLastFrame)
             {
                 IsActiveStateChangedEvent.Invoke();
             }

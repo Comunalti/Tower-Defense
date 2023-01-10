@@ -5,9 +5,25 @@ namespace Connections
 {
     public abstract class ConnectionHandler : MonoBehaviour
     {
-        [SerializeField] protected ConnectionHandler connectedHandler;
-        public ConnectionHandler ConnectedHandler => connectedHandler;
-        public bool IsConnected => connectedHandler != null;
+        public enum ConnectionColor
+        {
+            NoColor,
+            Yellow,
+            Blue,
+        }
+        public enum ConnectionType
+        {
+            Mobile,
+            Fixed,
+        }
+
+        [SerializeField] public ConnectionColor connectionColor;
+        [SerializeField] public ConnectionType connectionType;
+
+        
+        [SerializeField] protected ConnectionHandler currentConnectedHandler;
+        public ConnectionHandler CurrentConnectedHandler => currentConnectedHandler;
+        public bool IsConnected => currentConnectedHandler != null;
 
         [SerializeField] protected NodeConnector nodeConnector;
 
@@ -15,27 +31,55 @@ namespace Connections
 
         public Rigidbody2D GetOtherRigidbody()
         {
-            return connectedHandler.nodeConnector.GetComponentInChildren<Rigidbody2D>();
+            return currentConnectedHandler.nodeConnector.rootRigidBody;
         }
 
-        protected void TryConnectTo(ConnectionHandler connectionHandler)
-        { //todo: make this not connect when, it is already connected to something and add a flag for color
-            if (connectionHandler != null)
+        public void TryConnectTo(ConnectionHandler connectionHandler)
+        { 
+            if (IsConnected)
             {
-                connectedHandler = connectionHandler;
-                ConnectionChangedEvent.Invoke();
+                return;
             }
+            
+            if (connectionHandler == null)
+            {
+                return;
+            }
+
+            if (connectionHandler.connectionColor != connectionColor)
+            {
+                return;
+            }
+
+            if (connectionHandler.connectionType == connectionType)
+            {
+                return;
+            }
+
+            currentConnectedHandler = connectionHandler;
+            ConnectionChangedEvent.Invoke();
         }
 
-        protected void TryDisconnectTo(ConnectionHandler connectionHandler)
+        public void TryDisconnectTo(ConnectionHandler connectionHandler)
         {
             if (connectionHandler != null)
             {
-                if (connectionHandler == connectedHandler)
+                if (connectionHandler == currentConnectedHandler)
                 {
-                    connectedHandler = null;
+                    currentConnectedHandler = null;
                     ConnectionChangedEvent.Invoke();
                 }
+            }
+        }
+
+        public void DisconnectBoth()
+        {
+            if (currentConnectedHandler != null)
+            {
+                var temp = currentConnectedHandler;
+                currentConnectedHandler = null;
+                temp.DisconnectBoth();
+                ConnectionChangedEvent.Invoke();
             }
         }
     }

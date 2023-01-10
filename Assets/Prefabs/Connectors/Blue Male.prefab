@@ -83,6 +83,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 512786189340806700, guid: 75f7c0d29be80d146bfa26600ea0ce6e, type: 3}
+      propertyPath: rootRigidBody
+      value: 
+      objectReference: {fileID: 8218410981339084359}
     - target: {fileID: 2764415980275628810, guid: 75f7c0d29be80d146bfa26600ea0ce6e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -126,6 +130,10 @@ PrefabInstance:
     - target: {fileID: 2764415980275628810, guid: 75f7c0d29be80d146bfa26600ea0ce6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004947250909009771, guid: 75f7c0d29be80d146bfa26600ea0ce6e, type: 3}
+      propertyPath: connectionColor
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6139498807940215955, guid: 75f7c0d29be80d146bfa26600ea0ce6e, type: 3}
       propertyPath: m_Color.b
@@ -204,6 +212,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!50 &3555945492818640871
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993112257357269234}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &7886116607555393073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +243,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e072e2346ae24c5e80786a01e6e2a210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectionHandler: {fileID: 2607504550514549278}
+  interactable: {fileID: 3917496992103642136}
+--- !u!114 &7937315975764129700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993112257357269234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80256b246da54d7985d5a89be9e9d75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   connectionHandler: {fileID: 2607504550514549278}
