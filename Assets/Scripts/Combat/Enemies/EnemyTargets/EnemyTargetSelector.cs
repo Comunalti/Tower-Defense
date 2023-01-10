@@ -14,7 +14,7 @@ namespace Combat.Enemies.EnemyTargets
 
         [SerializeField] private Transform pivot;
         
-        public EnemyTarget CurrentEnemyTarget { get; private set; }
+        [field: SerializeField] public EnemyTarget CurrentEnemyTarget { get; private set; }
 
         public UnityEvent EnemyTargetChangedEvent;
         

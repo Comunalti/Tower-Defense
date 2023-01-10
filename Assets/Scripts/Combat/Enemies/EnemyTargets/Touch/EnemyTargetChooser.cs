@@ -16,15 +16,25 @@ namespace Combat.Enemies.EnemyTargets.Touch
         {
             currentChooseEnemyTarget = enemyTarget;
         }
+        private void OnTargetRemoved(EnemyTarget enemyTarget)
+        {
+            if (currentChooseEnemyTarget == enemyTarget)
+            {
+                currentChooseEnemyTarget = null;
+            }
+        }
         
         private void OnEnable()
         {
             enemyTargetTouchTrigger.targetAddedEvent.AddListener(OnTargetAdded);
+            enemyTargetTouchTrigger.targetRemovedEvent.AddListener(OnTargetRemoved);
         }
 
         private void OnDisable()
         {
             enemyTargetTouchTrigger.targetAddedEvent.RemoveListener(OnTargetAdded);
+            enemyTargetTouchTrigger.targetRemovedEvent.RemoveListener(OnTargetRemoved);
+
         }
     }
 }

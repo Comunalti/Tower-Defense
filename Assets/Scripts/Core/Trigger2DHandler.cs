@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 namespace Core
 {
+    [RequireComponent(typeof(Collider2D),typeof(Rigidbody2D))]
     public abstract class Trigger2DHandler<T> : MonoBehaviour
     {
         [SerializeField] private List<T> targetsTouched;
