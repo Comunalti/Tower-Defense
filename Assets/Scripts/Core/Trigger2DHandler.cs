@@ -10,7 +10,13 @@ namespace Core
         [SerializeField] private List<T> targetsTouched;
         public UnityEvent<T> targetAddedEvent;
         public UnityEvent<T> targetRemovedEvent;
-            
+
+        [field: SerializeField] public bool IsTouching { get; private set; }
+
+        private void Refresh()
+        {
+            IsTouching = targetsTouched.Count != 0;
+        }
         private void OnTriggerEnter2D(Collider2D other)
         {
             var target = other.GetComponentInChildren<T>();
@@ -18,6 +24,7 @@ namespace Core
             {
                 targetsTouched.Add(target);
                 targetAddedEvent.Invoke(target);
+                Refresh();
             }
         }
 
@@ -28,6 +35,7 @@ namespace Core
             {
                 targetsTouched.Remove(target);
                 targetRemovedEvent.Invoke(target);
+                Refresh();
             }
         }
     }

@@ -10,11 +10,9 @@ namespace Combat.Enemies.Attack
         [SerializeField] private EnemyAttackHandler enemyAttackHandler;
 
         [SerializeField] private float delayTime;
-        
-        
+
         private bool _isActive;
-
-
+        
         IEnumerator AttackingRoutine()
         {
             while (true)

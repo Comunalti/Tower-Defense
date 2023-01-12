@@ -8,7 +8,6 @@ namespace Combat.Enemies.Attack
     public class EnemyAttackHandler : MonoBehaviour
     {
         [SerializeField] private EnemyTargetChooser enemyTargetToucher;
-
         
         [SerializeField] private float attackDamage;
         

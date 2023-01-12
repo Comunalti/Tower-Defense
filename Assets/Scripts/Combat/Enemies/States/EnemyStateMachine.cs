@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Combat.Enemies.States
@@ -9,6 +10,11 @@ namespace Combat.Enemies.States
         [SerializeField] private EnemyState initialState;
         
         public UnityEvent StateChangedEvent;
+
+        private void Start()
+        {
+            SetCurrentState(initialState);
+        }
 
         public void SetCurrentState(EnemyState enemyState)
         {
