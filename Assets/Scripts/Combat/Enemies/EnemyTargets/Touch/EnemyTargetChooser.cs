@@ -11,16 +11,20 @@ namespace Combat.Enemies.EnemyTargets.Touch
         
         public EnemyTarget CurrentChooseEnemyTarget => currentChooseEnemyTarget;
 
+        public bool HasChoose => currentChooseEnemyTarget != null;
+        
         public UnityEvent ChooseEnemyTargetChangedEvent;
         private void OnTargetAdded(EnemyTarget enemyTarget)
         {
             currentChooseEnemyTarget = enemyTarget;
+            ChooseEnemyTargetChangedEvent.Invoke();
         }
         private void OnTargetRemoved(EnemyTarget enemyTarget)
         {
             if (currentChooseEnemyTarget == enemyTarget)
             {
                 currentChooseEnemyTarget = null;
+                ChooseEnemyTargetChangedEvent.Invoke();
             }
         }
         

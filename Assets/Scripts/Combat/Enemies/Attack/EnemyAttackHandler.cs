@@ -7,11 +7,11 @@ namespace Combat.Enemies.Attack
 {
     public class EnemyAttackHandler : MonoBehaviour
     {
-        [SerializeField] private EnemyTargetChooser enemyTargetToucher;
+        [SerializeField] private EnemyTargetChooser enemyTargetChooser;
         
         [SerializeField] private float attackDamage;
         
-        private EnemyTarget currentTouchedEnemyTarget;
+        [SerializeField] private EnemyTarget currentTouchedEnemyTarget;
         
         public UnityEvent SuccessfulAttackEvent;
         public UnityEvent FailedAttackEvent;
@@ -30,16 +30,16 @@ namespace Combat.Enemies.Attack
 
         private void OnChooseEnemyTargetChanged()
         {
-            currentTouchedEnemyTarget = enemyTargetToucher.CurrentChooseEnemyTarget;
+            currentTouchedEnemyTarget = enemyTargetChooser.CurrentChooseEnemyTarget;
         }
         
         private void OnEnable()
         {
-            enemyTargetToucher.ChooseEnemyTargetChangedEvent.AddListener(OnChooseEnemyTargetChanged);
+            enemyTargetChooser.ChooseEnemyTargetChangedEvent.AddListener(OnChooseEnemyTargetChanged);
         }
         private void OnDisable()
         {
-            enemyTargetToucher.ChooseEnemyTargetChangedEvent.RemoveListener(OnChooseEnemyTargetChanged);
+            enemyTargetChooser.ChooseEnemyTargetChangedEvent.RemoveListener(OnChooseEnemyTargetChanged);
         }
     }
 }

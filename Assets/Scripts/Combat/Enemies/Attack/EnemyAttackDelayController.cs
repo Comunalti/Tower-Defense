@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using Combat.Enemies.States;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Combat.Enemies.Attack
 {
     public class EnemyAttackDelayController : MonoBehaviour
     {
-        [SerializeField] private EnemyState attackState;
         [SerializeField] private EnemyAttackHandler enemyAttackHandler;
 
         [SerializeField] private float delayTime;
@@ -23,30 +22,17 @@ namespace Combat.Enemies.Attack
             yield break;
         }
         
-        
-        private void OnEnterState()
-        {
-            _isActive = true;
-            StartCoroutine(AttackingRoutine());
-        }
-        private void OnLeaveState()
-        {
-            _isActive = false;
-            StopAllCoroutines();
-        }
-        
         private void OnEnable()
         {
-            attackState.EnterStateEvent.AddListener(OnEnterState);
-            attackState.EnterStateEvent.AddListener(OnLeaveState);
+            _isActive = true; 
+            StartCoroutine(AttackingRoutine());
         }
 
         
         private void OnDisable()
         {
-            attackState.EnterStateEvent.RemoveListener(OnEnterState);
-            attackState.EnterStateEvent.RemoveListener(OnLeaveState);
-
+          _isActive = false;
+          StopAllCoroutines();
         }
     }
 }

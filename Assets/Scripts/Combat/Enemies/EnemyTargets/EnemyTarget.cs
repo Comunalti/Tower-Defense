@@ -1,4 +1,5 @@
-﻿using Combat.Health;
+﻿using System;
+using Combat.Health;
 using UnityEngine;
 
 namespace Combat.Enemies.EnemyTargets
@@ -11,9 +12,14 @@ namespace Combat.Enemies.EnemyTargets
         [field: SerializeField] public Transform Pivot { get; private set; }
         // todo add more references to use in other scripts
 
-        private void Awake()
+        private void OnEnable()
         {
             EnemyTargetSelector.EnemyTargets.Add(this);
+        }
+
+        private void OnDisable()
+        {
+            EnemyTargetSelector.EnemyTargets.Remove(this);
         }
     }
 }

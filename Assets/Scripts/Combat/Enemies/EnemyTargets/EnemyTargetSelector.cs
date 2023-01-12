@@ -15,6 +15,7 @@ namespace Combat.Enemies.EnemyTargets
         [SerializeField] private Transform pivot;
         
         [field: SerializeField] public EnemyTarget CurrentEnemyTarget { get; private set; }
+        [field: SerializeField] public bool HasTarget { get; private set; }
 
         public UnityEvent EnemyTargetChangedEvent;
         
@@ -22,6 +23,8 @@ namespace Combat.Enemies.EnemyTargets
         {
             var lastFrameCurrentEnemyTarget = CurrentEnemyTarget;
             CurrentEnemyTarget = GetClosestEnemyTarget(pivot.position);
+
+            HasTarget = CurrentEnemyTarget != null;
             
             if (lastFrameCurrentEnemyTarget != CurrentEnemyTarget)
             {
