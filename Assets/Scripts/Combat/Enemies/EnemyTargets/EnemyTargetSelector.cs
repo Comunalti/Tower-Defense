@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 namespace Combat.Enemies.EnemyTargets
@@ -10,12 +9,10 @@ namespace Combat.Enemies.EnemyTargets
     /// </summary>
     public class EnemyTargetSelector : MonoBehaviour
     {
-        public static readonly List<EnemyTarget> EnemyTargets = new List<EnemyTarget>();
-
         [SerializeField] private Transform pivot;
         
         [field: SerializeField] public EnemyTarget CurrentEnemyTarget { get; private set; }
-        [field: SerializeField] public bool HasTarget { get; private set; }
+        // [field: SerializeField] public bool HasTarget { get; private set; }
 
         public UnityEvent EnemyTargetChangedEvent;
         
@@ -24,7 +21,7 @@ namespace Combat.Enemies.EnemyTargets
             var lastFrameCurrentEnemyTarget = CurrentEnemyTarget;
             CurrentEnemyTarget = GetClosestEnemyTarget(pivot.position);
 
-            HasTarget = CurrentEnemyTarget != null;
+            // HasTarget = CurrentEnemyTarget != null;
             
             if (lastFrameCurrentEnemyTarget != CurrentEnemyTarget)
             {
@@ -37,7 +34,7 @@ namespace Combat.Enemies.EnemyTargets
             var closestDistance = Mathf.Infinity;
             EnemyTarget closestEnemyTarget = null;
             
-            foreach (var enemyTarget in EnemyTargets)
+            foreach (var enemyTarget in EnemyTargetsList.EnemyTargets)
             {
                 var distance = Vector2.Distance(enemyTarget.Pivot.position,position);
                 if (distance<=closestDistance)

@@ -14,12 +14,12 @@ namespace Combat.Enemies.EnemyTargets
 
         private void OnEnable()
         {
-            EnemyTargetSelector.EnemyTargets.Add(this);
+            EnemyTargetsList.Add(this);
         }
 
         private void OnDisable()
         {
-            EnemyTargetSelector.EnemyTargets.Remove(this);
+            EnemyTargetsList.Remove(this);
         }
     }
 }

@@ -1,15 +1,12 @@
-﻿using System;
-using Combat.Enemies.EnemyTargets;
+﻿using Combat.Enemies.EnemyTargets;
 using UnityEngine;
 
 namespace Combat.Enemies.States.Transitions
 {
-    public class IdleTransition : MonoBehaviour
+    public class FollowTransition : MonoBehaviour
     {
-
         [SerializeField] private EnemyStateMachine enemyStateMachine;
         [SerializeField] private EnemyState enemyState;
-
         // private void Update()
         // {
         //     Refresh();
@@ -17,24 +14,20 @@ namespace Combat.Enemies.States.Transitions
 
         private void Refresh(EnemyTarget enemyTarget = null)
         {
-            if (!EnemyTargetsList.HasAnyTarget)
+            if (EnemyTargetsList.HasAnyTarget)
             {
                 enemyStateMachine.SetCurrentState(enemyState);
-            }
-            else
-            {
-                
             }
         }
         
         private void OnEnable()
         {
-            EnemyTargetsList.EnemyTargetRemovedEvent += Refresh;
+            EnemyTargetsList.EnemyTargetAddedEvent += Refresh;
         }
         
         private void OnDisable()
         {
-            EnemyTargetsList.EnemyTargetRemovedEvent -= Refresh;
+            EnemyTargetsList.EnemyTargetAddedEvent -= Refresh;
         }
     }
 }

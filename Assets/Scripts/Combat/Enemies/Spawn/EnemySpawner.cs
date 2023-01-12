@@ -10,6 +10,7 @@ namespace Combat.Enemies.Spawn
         
         public UnityEvent enemySpawnedEvent;
 
+        [ContextMenu("SpawnEnemy")]
         public void SpawnEnemy()
         {
             var clone = Instantiate(enemyPrefab,pivot.position,pivot.rotation);

@@ -1,0 +1,54 @@
+adicionar as paradas de Health/Target nas partes de base
+
+colocar vida nos inimigos
+montar o estado de morte dos inimigos
+criar componente pra disparar evento quando a vida chegar a zero
+transição de morte no evento de morte
+desabilitar os gameobjects quando entrar no estado de morte
+
+
+fazer com a galerinha:
+	montar o animator do inimigo
+	fazer as transições com base nos estados
+	colocar som em cada um dos estados
+	colocar particulas em cada um dos estados
+	colocar animações no animator em cada um dos estados
+	colocar tweening em cada um dos estados
+	adicionar efeitos especiais em cada um dos estados
+
+
+
+voltar a fazer a arma
+fazer com que ela se conecte de forma certa com joints
+fazer 2 partes, uma pra rodar e outra para desconectar o core da base
+quando clicar na parte do meio, desconectar
+quando clicar na ponta rodar por meio da fisica
+quando clicar na base, e não estiver conectado, pode mover
+quando clicar na base, e estiver conectado, não pode mover
+
+arrumar a parte de transferencia de energia
+melhorar a maneira de consumir energia
+
+
+
+criar projeteis para poder atirar nos inimigos
+os projeteis irão ignorar as construções do player e acertão só os inimigos
+criar uma classe (BulletTriggerHandler) (HitTriggerHandler) que ficará na bala e no inimigo
+criar uma classe no inimigo para ouvir o HitTrigger e pegar as informações da bullet, dar dano no inimigo
+criar uma classe no inimigo para ouvir o hitTrigger e dar knockback
+criar a classe para aplicar o knockback
+criar os prefabs
+
+fazer a arma atirar o prefab de bala
+
+
+
+
+
+
+
+mais para frente
+criar um core que mira as armas em volta nos inimigos
+fazer um interruptor
+fazer tooltip nos itens do player
+

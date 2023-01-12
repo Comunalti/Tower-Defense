@@ -18,6 +18,10 @@ namespace Combat.Enemies.States
 
         public void SetCurrentState(EnemyState enemyState)
         {
+            var a = currentState ? currentState.name : "null";
+            var b = enemyState ? enemyState.name : "null";
+            print($"changing state, from: {a} to: {b}");
+            
             if (currentState != null)
             {
                 currentState.LeaveState();
