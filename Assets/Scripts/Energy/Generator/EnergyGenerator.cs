@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Energy
+namespace Energy.Generator
 {
     public class EnergyGenerator : MonoBehaviour
     {

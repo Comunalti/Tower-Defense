@@ -1,23 +1,14 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Energy
+namespace Energy.Consumer
 {
-    public abstract class EnergyConsumer : MonoBehaviour
-    {
-        public UnityEvent IsActiveStateChangedEvent;
-        [field: SerializeField] public bool IsActive { get; protected set; }
-    }
     public class ContinuousEnergyConsumer : EnergyConsumer
     {
         //todo: create discrete version
         
         [SerializeField] private EnergyStorage energyStorage;
         [SerializeField] [Tooltip("Per Sec")] private float energyCost;
-
-        public UnityEvent IsActiveStateChangedEvent;
-        
         
         private void Update()
         {
@@ -25,7 +16,7 @@ namespace Energy
             
             if (energyStorage.CurrentEnergy >= energyCost)
             {
-                energyStorage.RemoveEnergy(energyCost);
+                energyStorage.RemoveEnergy(energyCost*Time.deltaTime);
                 IsActive = true;
             }
             else

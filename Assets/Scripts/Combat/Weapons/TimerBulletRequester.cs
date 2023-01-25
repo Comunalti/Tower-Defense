@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Energy;
+using Energy.Consumer;
 using UnityEngine;
 
 namespace Combat.Weapons

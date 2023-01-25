@@ -1,4 +1,5 @@
 ﻿using System;
+using Energy.Consumer;
 using UnityEngine;
 
 namespace Energy.Actuators

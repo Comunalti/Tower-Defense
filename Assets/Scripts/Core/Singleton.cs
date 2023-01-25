@@ -4,15 +4,26 @@ namespace Core
 {
     public class Singleton<T> : MonoBehaviour where T: Singleton<T>
     {
-        public static T Instance { get; private set; }
+        private static T instance;
+        public static T Instance
+        {
+            get {
+                if (instance is null)
+                {
+                    Debug.LogError($"no single found, of type:{typeof(T).FullName}");
+                }
+
+                return instance; }
+        }
         private void Awake()
         {
-            if (Instance != null)
+            if (instance != null)
             {
                 Debug.LogWarning("Only one instance, ignoring this instance",gameObject);
                 return;
             }
-            Instance = (T)this;
+            instance = (T)this;
+            DontDestroyOnLoad(gameObject);
             OnAwake();
         }
 
